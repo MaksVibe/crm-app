@@ -1,15 +1,13 @@
 import "./App.scss";
 import * as React from "react";
-import SideMenu from "./components/SideMenu/SideMenu";
+import Layout from "./components/Layout/Layout";
+import Router from "./Router";
 
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <h2>Hello</h2>
-      </header>
-      <SideMenu />
-    </div>
+    <Layout>
+      <Router />
+    </Layout>
   );
 };
 

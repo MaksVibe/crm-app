@@ -1,0 +1,29 @@
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+  color: #9197b3;
+
+  &__link {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 11px 8px 11px 11px;
+    border-radius: 8px;
+    font-size: 14px;
+    font-weight: 500;
+    line-height: normal;
+    letter-spacing: -0.14px;
+    text-transform: capitalize;
+
+    &--arrow {
+      margin-left: auto;
+    }
+
+    &:hover,
+    &.active {
+      color: white;
+      background-color: #5932ea;
+    }
+  }
+}

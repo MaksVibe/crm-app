@@ -28,5 +28,5 @@
     "jest",
     "src/setupTests.ts"
   ],
-  "include": ["src/components", "src/custom.d.ts"]
+  "include": ["src/components", "src/common", "src/pages", "custom.d.ts"]
 }

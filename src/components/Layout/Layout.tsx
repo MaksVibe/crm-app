@@ -1,5 +1,6 @@
 import * as React from "react";
 import SideMenu from "../SideMenu/SideMenu";
+import "./Layout.scss";
 
 type LayoutProps = {
   children: React.JSX.Element;
@@ -7,9 +8,9 @@ type LayoutProps = {
 
 export default function Layout({ children }: LayoutProps) {
   return (
-    <div>
+    <div className="layout">
       <SideMenu />
-      {children}
+      <main className="layout__page">{children}</main>
     </div>
   );
 }

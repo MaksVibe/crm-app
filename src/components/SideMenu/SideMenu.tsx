@@ -1,27 +1,24 @@
 import * as React from "react";
-import { NavLink } from "react-router-dom";
-import { DefaultRoutes } from "../../Router";
-interface SideMenuProps {}
+import Navigation from "../Navigation/Navigation";
+import "./SideMenu.scss";
 
-const SideMenu: React.FC<SideMenuProps> = () => {
+const SideMenu: React.FC = () => {
   return (
-    <nav>
-      <ul>
-        {Object.keys(DefaultRoutes).map((route, index) => (
-          <li key={index}>
-            <NavLink
-              to={route}
-              style={({ isActive, isPending }) => {
-                return {
-                  color: isActive ? "red" : "inherit",
-                };
-              }}
-            >
-              {route}
-            </NavLink>
-          </li>
-        ))}
-      </ul>
+    <nav className="menu">
+      <Navigation />
+      <a href="profile" className="menu__profile">
+        <img
+          src="images/profile-pic.png"
+          alt="profile picure"
+          width={42}
+          height={42}
+          className="menu__profile--picture"
+        />
+        <div>
+          <p id="name">Evano</p>
+          <p id="job-title">Project Manager</p>
+        </div>
+      </a>
     </nav>
   );
 };

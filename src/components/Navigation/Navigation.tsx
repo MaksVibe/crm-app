@@ -4,23 +4,32 @@ import Icon from "src/common/Icon/Icon";
 import { DefaultRoutes } from "src/Router";
 import "./Navigation.scss";
 
-export default function Navigation() {
+export default function Navigation({
+  menuCollapsed,
+}: {
+  menuCollapsed: boolean;
+}) {
   return (
     <div>
       <a href="/" className="menu__logo">
-        <img src="./logo.svg" alt="CRM Dashboard Logo" width={37} height={37} />
-        <p className="menu__logo--title">
-          Dashboard<span className="menu__logo--text">v.01</span>
-        </p>
+        <img src="/logo.svg" alt="CRM Dashboard Logo" width={37} height={37} />
+        {!menuCollapsed && (
+          <p className="menu__logo--title">
+            Dashboard<span className="menu__logo--text">v.01</span>
+          </p>
+        )}
       </a>
       <ul className="navigation">
         {Object.keys(DefaultRoutes).map(
           (route, index) =>
             route !== "profile" && (
               <li key={index}>
-                <NavLink className="navigation__link" to={route}>
+                <NavLink
+                  className="navigation__link"
+                  to={route === "customers" ? route + "?page=1" : route}
+                >
                   <Icon icon={route} width={24} height={24} />
-                  {route}
+                  {!menuCollapsed && route}
                   {route !== "dashboard" && (
                     <Icon
                       icon="arrow"

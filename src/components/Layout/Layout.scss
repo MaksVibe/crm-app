@@ -1,10 +1,30 @@
+@use "../../styles/variables.scss" as *;
+
 .layout {
   display: flex;
-  width: 100%;
-  max-width: 1440px;
   margin: 0 auto;
 
   &__page {
     width: 100%;
+    padding: 41px 23px 129px 17px;
+    background-color: $bg-color;
+
+    &--heading {
+      font-size: 24px;
+      margin-bottom: 51px;
+      text-align: center;
+      color: $heading-color;
+    }
+
+    @media screen and (min-width: 768px) {
+      padding: 41px 47px 129px 35px;
+      &--heading {
+        text-align: left;
+      }
+    }
+
+    @media screen and (min-width: 1280px) {
+      padding: 41px 95px 258px 71px;
+    }
   }
 }

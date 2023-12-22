@@ -10,7 +10,10 @@ export default function Layout({ children }: LayoutProps) {
   return (
     <div className="layout">
       <SideMenu />
-      <main className="layout__page">{children}</main>
+      <main className="layout__page">
+        <p className="layout__page--heading">Hello Evano 👋🏼,</p>
+        {children}
+      </main>
     </div>
   );
 }

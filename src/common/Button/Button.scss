@@ -1,0 +1,18 @@
+@use "../../styles/variables.scss" as *;
+.btn {
+  padding: 6px 9px;
+  border-radius: 4px;
+  border: $border;
+  background-color: $pagination-bg-color;
+  cursor: pointer;
+
+  &.active {
+    color: $accent-color;
+    border: $accent-border;
+    background-color: $accent-bg-color;
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

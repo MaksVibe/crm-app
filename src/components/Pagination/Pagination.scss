@@ -1,0 +1,14 @@
+@use "../../styles/variables.scss" as *;
+
+.pagination {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  line-height: 1;
+  letter-spacing: -0.12px;
+
+  & button:not(:disabled, .active) {
+    color: $pagination-color;
+  }
+}

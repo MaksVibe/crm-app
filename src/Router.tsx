@@ -20,9 +20,16 @@ export const DefaultRoutes = {
 
 const Router = () => (
   <Routes>
-    {Object.keys(DefaultRoutes).map((route, index) => (
-      <Route path={route} element={DefaultRoutes[route]} key={index} />
-    ))}
+    {Object.keys(DefaultRoutes).map((route, index) =>
+      route === "customers" ? (
+        <Route path={route} element={DefaultRoutes[route]} key={index}>
+          <Route path=":page" element={DefaultRoutes[route]} />
+        </Route>
+      ) : (
+        <Route path={route} element={DefaultRoutes[route]} key={index} />
+      )
+    )}
   </Routes>
 );
+
 export default Router;

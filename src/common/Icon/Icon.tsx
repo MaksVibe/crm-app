@@ -4,8 +4,10 @@ import { ReactComponent as CustomersIcon } from "./icons/customers-icon-min.svg"
 import { ReactComponent as DashboardIcon } from "./icons/dashboard-icon-min.svg";
 import { ReactComponent as HelpIcon } from "./icons/help-icon-min.svg";
 import { ReactComponent as IncomeIcon } from "./icons/income-icon-min.svg";
+import { ReactComponent as PaginationArrowIcon } from "./icons/pag-arrow-icon.svg";
 import { ReactComponent as ProductIcon } from "./icons/product-icon-min.svg";
 import { ReactComponent as PromoteIcon } from "./icons/promote-icon-min.svg";
+import "./Icon.scss";
 
 const sprite = {
   arrow: <ArrowIcon />,
@@ -13,6 +15,7 @@ const sprite = {
   customers: <CustomersIcon />,
   help: <HelpIcon />,
   income: <IncomeIcon />,
+  pagArrow: <PaginationArrowIcon />,
   product: <ProductIcon />,
   promote: <PromoteIcon />,
 };
@@ -20,13 +23,26 @@ const sprite = {
 interface Props extends React.SVGAttributes<SVGElement> {
   icon: string;
   className?: string;
-  width: number;
-  height: number;
+  width?: number;
+  height?: number;
+  onClick?: () => void;
 }
 
-export default function Icon({ icon, className, width, height }: Props) {
+export default function Icon({
+  icon,
+  className,
+  width,
+  height,
+  onClick,
+}: Props) {
   return (
-    <div className={className} style={{ width, height }}>
+    <div
+      className={`icon-wrapper${className ? " " + className : ""} ${
+        icon === "pagArrow" ? " padding" : ""
+      }`}
+      style={{ width, height }}
+      onClick={onClick}
+    >
       {sprite[icon]}
     </div>
   );

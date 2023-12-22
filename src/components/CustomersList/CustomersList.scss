@@ -1,0 +1,103 @@
+@use "../../styles/variables.scss" as *;
+
+.table-container {
+  overflow-x: auto;
+  margin-bottom: 30px;
+}
+
+.table {
+  width: 100%;
+  white-space: nowrap;
+  border-spacing: 0;
+  border-collapse: collapse;
+  vertical-align: middle;
+  letter-spacing: -0.14px;
+
+  & th:not(:last-child),
+  td:not(:last-child) {
+    padding-right: 10px;
+  }
+
+  & th:first-child,
+  td:first-child {
+    padding-left: 38px;
+  }
+
+  & th:last-child,
+  td:last-child {
+    padding-right: 44px;
+  }
+
+  &__head--text,
+  &__body--text {
+    display: flex;
+    align-items: center;
+  }
+
+  &__head {
+    position: relative;
+    height: 50px;
+    text-transform: capitalize;
+    padding: 14px 0;
+    color: $secondary-color;
+
+    &::after {
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      width: 100%;
+      height: 1px;
+      display: block;
+      content: "";
+      border-bottom: $border;
+    }
+  }
+
+  &__head--cell,
+  &__body--cell {
+    &:last-child p {
+      justify-content: center;
+    }
+  }
+
+  &__body--text {
+    height: 67px;
+    width: 100%;
+    text-align: center;
+  }
+
+  &__body {
+    position: relative;
+    overflow-x: auto;
+
+    &::after {
+      bottom: 0;
+      left: 38px;
+      width: 92%;
+      position: absolute;
+      margin: 0 auto;
+      height: 1px;
+      display: block;
+      content: "";
+      border-bottom: $border;
+    }
+  }
+}
+
+.status {
+  width: 80px;
+  padding: 4px 12px;
+  border-radius: 4px;
+  text-transform: capitalize;
+
+  &.active {
+    border: $status-border-active;
+    color: $status-active-color;
+    background: $status-active-bg-color;
+  }
+  &.inactive {
+    border: $status-border-inactive;
+    color: $status-inctive-color;
+    background: $status-inactive-bg-color;
+  }
+}

@@ -1,0 +1,100 @@
+@use "../../styles/variables.scss" as *;
+
+.container {
+  width: 100%;
+  background-color: $container-bg-color;
+  border-radius: 30px;
+  filter: $container-filter;
+  padding: 30px 0 40px 0;
+
+  & header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 24px 26px 38px;
+
+    & h1 {
+      font-size: 22px;
+      font-weight: 600;
+      letter-spacing: -0.22px;
+      margin-bottom: 7px;
+      margin-right: 12px;
+    }
+
+    & p {
+      color: $sub-heading-color;
+      font-weight: 400;
+    }
+
+    & h1,
+    p {
+      text-transform: capitalize;
+    }
+
+    & input {
+      width: 100%;
+      max-width: 216px;
+      font-size: 12px;
+      font-weight: 400;
+      letter-spacing: -0.12px;
+      height: fit-content;
+      border: none;
+      border-radius: 10px;
+
+      &::placeholder {
+        color: $secondary-color;
+      }
+    }
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      align-items: flex-start;
+      & p {
+        margin-bottom: 7px;
+      }
+    }
+  }
+
+  & footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 40px 0 38px;
+
+    & p {
+      color: $secondary-color;
+    }
+  }
+
+  @media screen and (min-width: 768px) {
+    width: 60%;
+  }
+  @media screen and (min-width: 1120px) {
+    width: 70%;
+  }
+  @media screen and (min-width: 1200px) {
+    width: 80%;
+
+    & footer {
+      flex-direction: row;
+    }
+  }
+  @media screen and (min-width: 1280px) {
+    width: 100%;
+    & header {
+      padding-right: 53px;
+    }
+  }
+}
+
+#search {
+  background-image: url("../../../public/search-icon.svg");
+  background-repeat: no-repeat;
+  background-color: $input-bg-color;
+  background-position: 7px 8px;
+  border: none;
+  border-radius: 10px;
+  padding: 10px;
+  padding-left: 40px;
+}

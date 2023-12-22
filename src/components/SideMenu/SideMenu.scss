@@ -1,13 +1,14 @@
+@use "../../styles/variables.scss" as *;
+
 .menu {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   padding: 36px 28px 76px;
-  width: 100%;
-  max-width: 306px;
   min-height: 100vh;
-  background-color: #fff;
-  box-shadow: 0px 10px 60px 0px rgba(226, 236, 249, 0.5);
+  background-color: $container-bg-color;
+  box-shadow: $sidemenu-shadow;
+  position: relative;
 
   &__logo {
     display: flex;
@@ -19,15 +20,13 @@
     &--title {
       font-size: 26px;
       font-weight: 600;
-      line-height: normal;
       letter-spacing: 0.26px;
     }
 
     &--text {
       margin-left: 4px;
-      color: #838383;
+      color: $sub-color;
       font-size: 10px;
-      font-weight: 500;
       letter-spacing: -0.1px;
     }
   }
@@ -35,8 +34,6 @@
   &__profile {
     display: flex;
     align-items: center;
-    font-style: normal;
-    line-height: normal;
     width: fit-content;
 
     &--picture {
@@ -45,8 +42,6 @@
     }
 
     & #name {
-      font-size: 14px;
-      font-weight: 500;
       letter-spacing: 0.14px;
     }
 
@@ -54,7 +49,30 @@
       font-size: 12px;
       font-weight: 400;
       letter-spacing: 0.12px;
-      color: #757575;
+      color: $profile-color;
     }
   }
+  @media screen and (max-width: 767px) {
+    display: none;
+  }
+
+  &__collaps {
+    padding: 12px;
+    position: absolute;
+    right: -6px;
+    top: 44px;
+    background-color: $container-bg-color;
+    border-radius: 50%;
+    border: 1px solid $navigation-color;
+    cursor: pointer;
+
+    & svg {
+      display: block;
+    }
+    transition: transform 350ms ease-out;
+  }
+}
+
+.rotate {
+  transform: rotate(180deg);
 }

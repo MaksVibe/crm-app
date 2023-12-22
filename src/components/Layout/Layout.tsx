@@ -1,4 +1,5 @@
 import * as React from "react";
+import MobileMenu from "../MobileMenu/MobileMenu";
 import SideMenu from "../SideMenu/SideMenu";
 import "./Layout.scss";
 
@@ -14,6 +15,7 @@ export default function Layout({ children }: LayoutProps) {
         <p className="layout__page--heading">Hello Evano 👋🏼,</p>
         {children}
       </main>
+      {window && window.innerWidth < 768 && <MobileMenu />}
     </div>
   );
 }

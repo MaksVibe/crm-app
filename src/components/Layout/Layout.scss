@@ -12,15 +12,11 @@
     &--heading {
       font-size: 24px;
       margin-bottom: 51px;
-      text-align: center;
       color: $heading-color;
     }
 
     @media screen and (min-width: 768px) {
       padding: 41px 47px 129px 35px;
-      &--heading {
-        text-align: left;
-      }
     }
 
     @media screen and (min-width: 1280px) {

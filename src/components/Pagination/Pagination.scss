@@ -3,6 +3,7 @@
 .pagination {
   display: flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 12px;
   font-size: 12px;
   line-height: 1;
